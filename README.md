@@ -7,7 +7,7 @@
 Bikeshare Data Analysis
 
 ### Description
-This script allows users to explore and analyze bikeshare data for three major cities in the United States: Chicago, New York City, and Washington. Users can specify filters such as city, month, and day to generate various statistics and insights about bikeshare usage.
+This python script allows users to explore and analyze bikeshare data for three major cities in the United States: Chicago, New York City, and Washington. Users can specify filters such as city, month, and day to generate various statistics and insights about bikeshare usage.
 
 
 ### Files used

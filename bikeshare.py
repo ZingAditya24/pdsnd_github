@@ -2,6 +2,8 @@ import time
 import pandas as pd
 import numpy as np
 
+#Create a dictioary CITY_DATA which holds path to the .csv files
+
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -215,8 +217,21 @@ def user_stats(df):
     print('-'*40)
 
     
-
 def main():
+    """
+    The main function of the bikeshare data analysis script.
+    It serves as the entry point for the program and controls the flow of execution.
+
+    The function repeatedly prompts the user for city, month, and day filters, and then performs the following steps:
+    1. Calls the `get_filters()` function to get user input for city, month, and day.
+    2. Calls the `load_data()` function to load and filter the bikeshare data based on the user's input.
+    3. Calls the `get_raw_data()` function to display the raw data if requested by the user.
+    4. Calls the `time_stats()`, `station_stats()`, `trip_duration_stats()`, and `user_stats()` functions to calculate and display various statistics on the bikeshare data.
+    5. Asks the user if they want to restart the program or exit.
+
+    Returns:
+        None
+    """
     while True:
         city, month, day = get_filters()
         

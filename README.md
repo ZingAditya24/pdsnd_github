@@ -19,5 +19,6 @@ The script utilizes the following files:
 ### Credits
 1> https://pandas.pydata.org/
 2> https://www.geeksforgeeks.org/
+3> https://udacity.github.io/git-styleguide/
 
 

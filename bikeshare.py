@@ -82,15 +82,10 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    if city == 'chicago':
-        input_file = CITY_DATA['chicago']
-    elif city == 'new york city':
-        input_file = CITY_DATA['new york city']
-    elif city == 'washington':
-        input_file = CITY_DATA['washington']
-    else:
+    if city not in CITY_DATA:
         return None
     
+    input_file = CITY_DATA[city]
     df = pd.read_csv(input_file)
 
     # Convert the 'Start Time' column to datetime
@@ -98,21 +93,19 @@ def load_data(city, month, day):
 
     # Extracting month and day of week from the 'Start Time' column to create new columns
     df['Month'] = df['Start Time'].dt.month
-    df['Day of Week'] = df['Start Time'].dt.weekday_name
+    df['Day of Week'] = df['Start Time'].dt.day_name()
 
     # Apply filters based on the month and day inputs
     if month != 'all':
-        # Convert month name to month number (e.g., 'January' -> 1)
         months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month) + 1
-        # Filter by month
-        df = df[df['Month'] == month]
+        if month in months:
+            df = df[df['Month'] == months.index(month) + 1]
 
     if day != 'all':
-        # Filter by day of week
         df = df[df['Day of Week'] == day.title()]
 
     return df
+
 
 
 def time_stats(df):

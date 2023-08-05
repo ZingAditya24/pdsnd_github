@@ -10,7 +10,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 def get_raw_data(df):
     """
-    Returns the records from the dataset if requested by user:
+    Returns the records from the dataset (if requested by user):
     """
     # Display raw data upon user request
     display_raw_data = input("\n\nWould you like to see the raw data? Enter 'yes' or 'no': ")
